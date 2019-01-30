@@ -129,6 +129,41 @@
           }
         }
       }
+    },
+    "d-grid": {
+      "root": "projects/d-grid",
+      "sourceRoot": "projects/d-grid/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/d-grid/tsconfig.lib.json",
+            "project": "projects/d-grid/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/d-grid/src/test.ts",
+            "tsConfig": "projects/d-grid/tsconfig.spec.json",
+            "karmaConfig": "projects/d-grid/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/d-grid/tsconfig.lib.json",
+              "projects/d-grid/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "data-grid"

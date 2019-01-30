@@ -16,6 +16,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "d-grid": [
+        "dist/d-grid"
+      ],
+      "d-grid/*": [
+        "dist/d-grid/*"
+      ]
+    }
   }
 }
