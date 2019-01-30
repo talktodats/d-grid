@@ -1,19 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import {DDatatableComponent} from "./d-datatable/d-datatable.component";
+import {DColumnComponent} from "./d-datatable/d-column.component";
+import {DRowComponent} from "./d-datatable/d-row.component";
+import {FilterComponent} from "./d-datatable/filter-component/filter-component";
+/**
+ * Created by dattaram on 30/1/19.
+ */
 
-@Component({
-  selector: 'lib-d-grid',
-  template: `
-    <p>
-      d-grid works!
-    </p>
-  `,
-  styles: []
-})
-export class DGridComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
+export const DGRID_COMPONENTS: any[] = [
+  DDatatableComponent,
+  DColumnComponent,
+  DRowComponent,
+  FilterComponent
+];

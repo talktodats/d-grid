@@ -1,10 +1,22 @@
-import { NgModule } from '@angular/core';
-import { DGridComponent } from './d-grid.component';
+import {ModuleWithProviders, NgModule} from '@angular/core';
+import {DGRID_COMPONENTS} from "./d-grid.component";
+import {HttpClientModule} from "@angular/common/http";
+import {FormsModule} from "@angular/forms";
+import {BrowserModule} from "@angular/platform-browser";
+import {DataService} from "./d-datatable/d-datatable.service";
 
 @NgModule({
-  declarations: [DGridComponent],
+  declarations: DGRID_COMPONENTS,
   imports: [
+    BrowserModule, FormsModule, HttpClientModule
   ],
-  exports: [DGridComponent]
+  exports: DGRID_COMPONENTS
 })
-export class DGridModule { }
+export class DGridModule {
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: DGridModule,
+      providers: [DataService],
+    };
+  }
+}

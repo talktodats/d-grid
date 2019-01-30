@@ -1,0 +1,11 @@
+<div class="inputgroup">
+  <input type="text"
+         role="text"
+         tabindex="0"
+         id="textID"
+         name="textID"
+         class="input-control"
+         [ngModel]="searchKey"
+         (ngModelChange)="getSearchKey($event)"
+         name="search"/>
+</div>

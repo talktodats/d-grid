@@ -1,0 +1,98 @@
+/**
+ * Created by dattaram on 19/1/19.
+ */
+import {Injectable} from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+import {Observable} from 'rxjs';
+import {map} from 'rxjs/operators';
+import {BehaviorSubject} from 'rxjs/index';
+@Injectable()
+export class DataService {
+  private gridData$: any;
+  private gridData: any[] = [];
+  columnData: any[] = [];
+  gridDataBehaviour = new BehaviorSubject([]);
+  columnDataBehaviour = new BehaviorSubject([]);
+
+  private dataSourcekey: string;
+  constructor(private _httpClient: HttpClient) {
+  }
+
+  setDataByUrl(url: string, type: string, dataSourcekey?: string) {
+    this.dataSourcekey = dataSourcekey;
+    this.gridData$ =  this.getGridDataObservable(url);
+    this.subscribeGridData(this.gridData$);
+  }
+
+  pushObjectIntoGrid(gridObject: any, insertAtTop?: boolean, index?: number) {
+    if (insertAtTop) {
+      this.gridData.unshift(gridObject);
+    } else if (index <= this.gridData.length - 1) {
+      this.gridData.splice(index, 0, gridObject);
+    } else {
+      this.gridData.push(gridObject);
+    }
+    this.gridDataBehaviour.next(this.gridData);
+  }
+
+  margeDataIntoGrid(data: any[]) {
+    this.gridData = this.gridData.concat(data);
+    this.gridDataBehaviour.next(this.gridData);
+  }
+
+  addColumn(columnObject: any) {
+   this.columnData.push(columnObject);
+   this.columnDataBehaviour.next(this.columnData);
+  }
+
+  changeColumnStructure(columnData: any[]) {
+    this.columnData = [];
+    this.columnDataBehaviour.next(columnData);
+  }
+
+   private getGridDataObservable(url: string) {
+    return this._httpClient.get(url).pipe(
+      map(
+        x => {
+          return this.getGridData(x);
+        }
+      )
+    );
+  }
+
+   private getGridData(httpResponse: any) {
+    let responsedata = httpResponse;
+    if (this.dataSourcekey != null) {
+      const dr = this.dataSourcekey.split('.');
+      for (const ir of dr) {
+        responsedata = responsedata[ir];
+      }
+    } else {
+      responsedata = httpResponse;
+    }
+
+    return responsedata;
+  }
+
+   private subscribeGridData(subScData$: Observable<any>) {
+    subScData$.subscribe(
+      res => {
+        this.gridData = res;
+        this.gridDataBehaviour.next(this.gridData);
+      }
+    );
+  }
+
+  getData(): any {
+   return this.gridData;
+  }
+}
+
+
+
+/*Array.prototype.insert = function (index) {
+  this.splice.apply(this, [index, 0].concat(this.slice.call(arguments, 1)));
+};
+
+array.insert(2, "three", "another three", "the last three");
+array;  // ["one", "two", "three", "another three", "the last three", "four"]*/

@@ -1,0 +1,136 @@
+{
+  "response": {
+    "data": [
+      {
+        "countryName": "Myanmar",
+        "countryCode": "MM",
+        "countryCode2": "MMR",
+        "countryFlag": "MM.png",
+        "capital": "",
+        "currencyCode": "MMK",
+        "currencyName": "Kyat",
+        "currencySymbol": "K",
+        "capitalLatitude": null,
+        "capitalLongitude": null,
+        "isoNumeric": 104
+      },
+      {
+        "countryName": "U.S. Virgin Island",
+        "countryCode": "VI",
+        "countryCode2": "VIR",
+        "countryFlag": "VI.png",
+        "capital": "",
+        "currencyCode": "USD",
+        "currencyName": "Dollar",
+        "currencySymbol": "$",
+        "capitalLatitude": null,
+        "capitalLongitude": null,
+        "isoNumeric": 850
+      },
+      {
+        "countryName": "Latvia",
+        "countryCode": "LV",
+        "countryCode2": "LVA",
+        "countryFlag": "LV.png",
+        "capital": "",
+        "currencyCode": "LVL",
+        "currencyName": "Lat",
+        "currencySymbol": "Ls",
+        "capitalLatitude": null,
+        "capitalLongitude": null,
+        "isoNumeric": 428
+      },
+      {
+        "countryName": "British Indian Ocean Teritory",
+        "countryCode": "IO",
+        "countryCode2": "IOT",
+        "countryFlag": "IO.png",
+        "capital": "",
+        "currencyCode": "USD",
+        "currencyName": "Dollar",
+        "currencySymbol": "$",
+        "capitalLatitude": null,
+        "capitalLongitude": null,
+        "isoNumeric": 86
+      },
+      {
+        "countryName": "Reunion",
+        "countryCode": "RE",
+        "countryCode2": "REU",
+        "countryFlag": "RE.png",
+        "capital": "",
+        "currencyCode": "EUR",
+        "currencyName": "Euro",
+        "currencySymbol": "€",
+        "capitalLatitude": null,
+        "capitalLongitude": null,
+        "isoNumeric": 638
+      },
+      {
+        "countryName": "Gabon",
+        "countryCode": "GA",
+        "countryCode2": "GAB",
+        "countryFlag": "GA.png",
+        "capital": "",
+        "currencyCode": "XAF",
+        "currencyName": "Franc",
+        "currencySymbol": "FCF",
+        "capitalLatitude": null,
+        "capitalLongitude": null,
+        "isoNumeric": 266
+      },
+      {
+        "countryName": "Guyana",
+        "countryCode": "GY",
+        "countryCode2": "GUY",
+        "countryFlag": "GY.png",
+        "capital": "",
+        "currencyCode": "GYD",
+        "currencyName": "Dollar",
+        "currencySymbol": "$",
+        "capitalLatitude": null,
+        "capitalLongitude": null,
+        "isoNumeric": 328
+      },
+      {
+        "countryName": "Tajikistan",
+        "countryCode": "TJ",
+        "countryCode2": "TJK",
+        "countryFlag": "TJ.png",
+        "capital": "",
+        "currencyCode": "TJS",
+        "currencyName": "Somoni",
+        "currencySymbol": "",
+        "capitalLatitude": null,
+        "capitalLongitude": null,
+        "isoNumeric": 762
+      },
+      {
+        "countryName": "Slovenia",
+        "countryCode": "SI",
+        "countryCode2": "SVN",
+        "countryFlag": "SI.png",
+        "capital": "",
+        "currencyCode": "EUR",
+        "currencyName": "Euro",
+        "currencySymbol": "€",
+        "capitalLatitude": null,
+        "capitalLongitude": null,
+        "isoNumeric": 705
+      },
+      {
+        "countryName": "Martinique",
+        "countryCode": "MQ",
+        "countryCode2": "MTQ",
+        "countryFlag": "MQ.png",
+        "capital": "",
+        "currencyCode": "EUR",
+        "currencyName": "Euro",
+        "currencySymbol": "€",
+        "capitalLatitude": null,
+        "capitalLongitude": null,
+        "isoNumeric": 474
+      }
+    ]
+  }
+}

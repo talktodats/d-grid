@@ -1,0 +1,23 @@
+
+<div class="d-table">
+  <div class="d-table-header">
+    <div class="d-table-col" *ngFor="let column of columnData;trackBy: trackByColumn">
+      {{column.label}}
+    </div>
+  </div>
+  <div class="d-table-row">
+    <div class="d-table-col" *ngFor="let column of columnData" >
+      <filter-com [column]="column"></filter-com>
+    </div>
+
+  </div>
+  <ng-container *ngFor="let data of gridData;trackBy: trackByRow">
+    <div class="d-table-row" (click)="onRowClick(data)">
+      <div class="d-table-col" *ngFor="let column of columnData"  [attr.data-label]="column.label">
+        {{data[column.dataKey]}}
+      </div>
+    </div>
+  </ng-container>
+
+</div>
+
