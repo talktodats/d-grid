@@ -24,6 +24,8 @@ export class DDatatableComponent implements OnInit, AfterContentInit {
 
   aaa = 'datta';
 
+  gridViewData: any[];
+
   @Output() getRowData: EventEmitter<any> = new EventEmitter<any>();
 
   @ContentChildren(DColumnComponent) columnRef: QueryList<DColumnComponent>;
@@ -37,6 +39,10 @@ export class DDatatableComponent implements OnInit, AfterContentInit {
   ngOnInit() {
     this._dataService.gridDataBehaviour.subscribe((data: any) => {
      this.gridData = data;
+    });
+
+    this._dataService.gridViewDataBehaviour.subscribe((data: any) => {
+      this.gridViewData = data;
     });
     this._dataService.columnDataBehaviour.subscribe((data: any) => {
       this.columnData = data;

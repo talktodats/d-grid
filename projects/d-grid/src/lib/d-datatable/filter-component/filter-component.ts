@@ -2,7 +2,7 @@
  * Created by dattaram on 20/1/19.
  */
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {DataService} from "../d-datatable.service";
+import {DataService} from '../d-datatable.service';
 
 @Component({
    selector: 'filter-com', templateUrl: 'filter-component.html',
@@ -16,7 +16,7 @@ import {DataService} from "../d-datatable.service";
         display: inline-block;
         margin-bottom: .5rem;
       }
-      
+
       .input-control {
         width: 100%;
         padding: .375rem 0;
@@ -57,6 +57,12 @@ export class FilterComponent implements OnInit {
    }
 
   getSearchKey(key: string) {
-   this._dataService.gridDataBehaviour.next([this._dataService.getData().filter((item)=>{item.countryName.toLowerCase().includes(key)})]);
+    const resultArray = [];
+    this._dataService.getData().filter((item) => {
+    if (typeof item[this.column.dataKey] === 'string' && item[this.column.dataKey].toLowerCase().includes(key.toLocaleLowerCase())) {
+      return resultArray.push(item);
+    }
+    });
+    this._dataService.gridViewDataBehaviour.next(resultArray);
   }
 }

@@ -12,6 +12,7 @@ export class DataService {
   private gridData: any[] = [];
   columnData: any[] = [];
   gridDataBehaviour = new BehaviorSubject([]);
+  gridViewDataBehaviour = new BehaviorSubject([]);
   columnDataBehaviour = new BehaviorSubject([]);
 
   private dataSourcekey: string;
@@ -32,12 +33,12 @@ export class DataService {
     } else {
       this.gridData.push(gridObject);
     }
-    this.gridDataBehaviour.next(this.gridData);
+    this.publishData();
   }
 
   margeDataIntoGrid(data: any[]) {
     this.gridData = this.gridData.concat(data);
-    this.gridDataBehaviour.next(this.gridData);
+    this.publishData();
   }
 
   addColumn(columnObject: any) {
@@ -78,13 +79,18 @@ export class DataService {
     subScData$.subscribe(
       res => {
         this.gridData = res;
-        this.gridDataBehaviour.next(this.gridData);
+        this.publishData();
       }
     );
   }
 
   getData(): any {
    return this.gridData;
+  }
+
+  private publishData() {
+    this.gridDataBehaviour.next(this.gridData);
+    this.gridViewDataBehaviour.next(this.gridData);
   }
 }
 

@@ -11,7 +11,7 @@
     </div>
 
   </div>
-  <ng-container *ngFor="let data of gridData;trackBy: trackByRow">
+  <ng-container *ngFor="let data of gridViewData;trackBy: trackByRow">
     <div class="d-table-row" (click)="onRowClick(data)">
       <div class="d-table-col" *ngFor="let column of columnData"  [attr.data-label]="column.label">
         {{data[column.dataKey]}}
